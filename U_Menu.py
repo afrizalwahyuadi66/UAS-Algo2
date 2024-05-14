@@ -5,6 +5,7 @@ def main_menu():
     pengelola_mahasiswa = PengelolaDataMahasiswa()
 
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("\nMenu Utama:")
         print("1. Pengelola Data Mahasiswa")
         print("2. Simulasi Metode Internal-Sorting dari Data file")
