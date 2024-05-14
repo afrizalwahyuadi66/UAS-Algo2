@@ -1,4 +1,5 @@
 from tabulate import tabulate
+import os
 
 class Mahasiswa:
     def __init__(self, nim, nama, nilai):
@@ -54,6 +55,7 @@ class PengelolaDataMahasiswa:
         pengelola = PengelolaDataMahasiswa()
         
         while True:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\nMenu:")
             print("1. Tambah Mahasiswa")
             print("2. Hapus Mahasiswa")
@@ -70,19 +72,29 @@ class PengelolaDataMahasiswa:
                 nilai = input("Masukkan nilai mahasiswa: ")
                 mahasiswa_baru = Mahasiswa(nim, nama, nilai)
                 pengelola.tambah_mahasiswa(mahasiswa_baru)
+                input()
+                
             elif pilihan == '2':
                 nim = input("Masukkan NIM mahasiswa yang ingin dihapus: ")
                 pengelola.hapus_mahasiswa(nim)
+                input()
+                
             elif pilihan == '3':
                 pengelola.tampilkan_mahasiswa()
+                input()
+                
             elif pilihan == '4':
                 nim = input("Masukkan NIM mahasiswa yang ingin dicari: ")
                 pengelola.cari_mahasiswa(nim)
+                input()
+                
             elif pilihan == '5':
                 nim = input("Masukkan NIM mahasiswa yang ingin diperbaiki: ")
                 nama = input("Masukkan nama baru: ")
                 nilai = input("Masukkan nilai baru: ")
                 pengelola.perbaiki_mahasiswa(nim, nama, nilai)
+                input()
+            
             elif pilihan == '6':
                 break
             else:
