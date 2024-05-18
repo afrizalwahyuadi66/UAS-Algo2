@@ -10,7 +10,7 @@ Kelompok ANS7:
   ```
   apt update && apt upgrade
   apt install git python
-  pip install pandas time tabulate
+  pip install pandas tabulate
   git clone https://github.com/afrizalwahyuadi66/UTS_Algoritma-2.git
   ```
 
