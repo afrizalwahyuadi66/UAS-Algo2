@@ -3,6 +3,8 @@ import os
 import string
 import pandas as pd
 import random
+import time
+import sys
 
 class Mahasiswa:
     def __init__(self, nim, nama, nilai):
@@ -21,14 +23,37 @@ class PengelolaDataMahasiswa:
         if os.path.exists("data_mahasiswa.xlsx"):
             self.load_excel_data("data_mahasiswa.xlsx")
         else:
-            input("Tidak ada file data mahasiswa yang ditemukan.")
+            animation = ["[■□□□□□□□□□]", "[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+            
+            for i in range(10):
+                time.sleep(0.2)
+                sys.stdout.write("\rSearching for file > " + animation[i % len(animation)])
+                sys.stdout.flush()
+            input(
+            "\033\n[1m{"
+            "\033[091mFAILED"
+            "\033[037m} "
+            "\033[0m"
+            "\033 Program tidak menemukan data excel")
 
     # Fungsi untuk memuat data dari file Excel (.xlsx)
     def load_excel_data(self, file_name):
+        animation = ["[■□□□□□□□□□]", "[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+
+        for i in range(10):
+            time.sleep(0.2)
+            sys.stdout.write("\rSearching for file > " + animation[i % len(animation)])
+            sys.stdout.flush()
+            
         df = pd.read_excel(file_name)
         for index, row in df.iterrows():
             self.data_mahasiswa.append(Mahasiswa(row['NIM'], row['NAMA'], row['NILAI']))
-        input("Load Success from Excel!!!")
+        input(
+        "\033\n[1m{"
+        "\033[094mSUCCESS"
+        "\033[037m} "
+        "\033[0m"
+        "\033 Program berhasil menemukan data excel")
         
 #---------------DEFINE TAMBAH MAHASISWA--------------------------------
     def tambah_mahasiswa(self, nim, nama, nilai):
