@@ -5,6 +5,8 @@ import pandas as pd
 import random
 import time
 import sys
+from U_Menu import logo_main
+import U_Menu
 
 class Mahasiswa:
     def __init__(self, nim, nama, nilai):
@@ -105,7 +107,6 @@ class PengelolaDataMahasiswa:
         print("Mahasiswa dengan NIM {} tidak ditemukan.".format(nim))
 #----------------------------------------------------------------------
         
-        
 #--------------------- DEFINE SIMPAN DATA -------------------------------
     def simpan_data(self, format_file):
         if not self.data_mahasiswa:
@@ -147,7 +148,8 @@ class PengelolaDataMahasiswa:
 
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("\nMenu:")
+            U_Menu.logo_main()
+            print("Menu:")
             print("1. Tambah Mahasiswa")
             print("2. Hapus Mahasiswa")
             print("3. Tampilkan Data Mahasiswa")
