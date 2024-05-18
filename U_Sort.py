@@ -1,5 +1,7 @@
 import pandas as pd
 import os
+from U_Menu import logo_main
+import U_Menu
 
 class U_Sort:
     @staticmethod
@@ -128,8 +130,8 @@ class U_Sort:
     @staticmethod
     def sorting_menu():
         while True:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print("\nMenu Sorting dari Data file:")
+            U_Menu.logo_main()
+            print("Menu Sorting dari Data file:")
             print("1. Sorting dari file Excel")
             print("2. Sorting dari file teks")
             print("3. Kembali ke menu utama")
