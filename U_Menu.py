@@ -24,5 +24,21 @@ def logo_main():
 def main_menu():
         print("Menu Utama:")
         print("1. Pengelola Data Mahasiswa")
-        print("2. Sorting dari Data file")
-        print("3. Keluar")
+        print("2. Soal Tugas")
+        print("3. Sorting dari Data file")
+        print("4. Keluar")
+
+def menu_soal():
+        print("Menu Soal:")
+        print("1.  Soal No.1")
+        print("2.  Soal No.2")
+        print("3.  Soal No.3")
+        print("4.  Soal No.4")
+        print("5.  Soal No.5")
+        print("6.  Soal No.6")
+        print("7.  Soal No.7")
+        print("8.  Soal No.8")
+        print("9.  Soal No.9")
+        print("10. Soal No.10")
+        print("11. Soal No.11")
+        print("12. Soal Game")
