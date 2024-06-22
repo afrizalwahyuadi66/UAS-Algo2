@@ -4,6 +4,7 @@ from U_Menu import main_menu
 from U_Menu import logo_main
 import U_Menu
 import U_File
+import U_Soal
 import os
 
 def main():
@@ -20,9 +21,17 @@ def main():
         elif pilihan == '2':
             os.system('cls' if os.name == 'nt' else 'clear')
             U_Menu.logo_main()
-            U_Sort.sorting_menu()
+            U_Menu.menu_soal()
+            choice = int(input("Pilih Program > "))
+            if choice >= 1 and choice <= 12:
+                U_Soal.run_program(choice)
+            
         elif pilihan == '3':
-            print("Program selesai.")
+            os.system('cls' if os.name == 'nt' else 'clear')
+            U_Menu.logo_main()
+            U_Sort.sorting_menu()
+        elif pilihan == '4':
+            input("Program selesai ")
             break
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
